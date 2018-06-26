@@ -1,5 +1,5 @@
 ## Ref
 * Doc
- + https://lhartikk.github.io/jekyll/update/2017/07/15/chapter0.html
+ + http://lhartikk.github.io/
 * Source code
   + https://github.com/lhartikk/naivechain

@@ -1,78 +1,81 @@
-const Block = require('./block');
+const CryptoJS = require('crypto-js');
 
-class Blockchain {
+class Block {
+    constructor(index, hash, prevHash, timestamp, data) {
+        this.index = index;
+        this.hash = hash;
+        this.prevHash = prevHash;
+        this.timestamp = timestamp;
+        this.data = data;
+    }
+}
+
+class BlockChain {
+
     constructor() {
-        this.chain = [this.createGenesisBlock()];
-        this.difficulty = 2;
+        this.blockchain = [this.genesisBlock()];
     }
 
-    createGenesisBlock() {
-        return new Block(0, '', 'Genesis block');
+    // Genesis a block
+    genesisBlock() {
+        let block = new Block(0, '816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7', null, 1465154705, 'my genesis block!!');
+        return block;
     }
 
+    getBlockchain() {
+        return this.blockchain;
+    }
+
+    // Get lates block
     getLatesBlock() {
-        return this.chain[this.chain.length - 1];
+        return this.blockchain[this.blockchain.length - 1];
     }
 
-    addBlock(data) {
+    // CalculateHash
+    calculateHash(index, prevHash, timestamp, data) {
+        return CryptoJS.SHA256(index + prevHash + timestamp + data).toString();
     }
 
-    generateNextBlock(data) {
-        let index = this.chain.length;
-        let prevHash = this.chain.getLatesBlock().hash;
-        let block = new Block(index, prevHash, data);
-        this.chain.push(block);
+    calculateHashForBlock(block) {
+        return this.calculateHash(block.index, block.prevHash, block.timestamp, block.data);
     }
 
+    // is valid new block
     isValidNewBlock(newBlock, prevBlock) {
         if (prevBlock.index + 1 !== newBlock.index) {
             console.log('Invalid index');
             return false;
         }
-
         if (prevBlock.hash !== newBlock.prevHash) {
             console.log('Invalid prev hash');
             return false;
         }
-
-        if (newBlock.getHash() !== newBlock.hash) {
+        if (this.calculateHashForBlock(newBlock) !== newBlock.hash) {
             console.log('Invalid hash');
             return false;
         }
-
         return true;
     }
 
-    isValidChain(newChain) {
-        for (let i = 1; i < newChain.length; i++) {
-            const currentBlock = newChain[i];
-            const previousBlock = newChain[i - 1];
-            if (!this.isValidNewBlock(currentBlock, previousBlock)) {
-                return false;
-            }
+    // Add block
+    addBlock(newBlock) {
+        if (this.isValidNewBlock(newBlock, this.getLatesBlock())) {
+            this.blockchain.push(newBlock);
+            return true;
         }
-        return true;
+        return false;
     }
 
-    isValidBlockchainStructure(block) {
-        return typeof block.index === 'number' &&
-            typeof block.hash === 'string' &&
-            typeof block.prevHash === 'string';
-    }
-
-    broadcastLatest() {
-        console.log('Broadcast ....');
-    }
-
-    replaceChain(newChain) {
-        if (this.isValidChain(newChain) && newChain.length > this.chain.length) {
-            console.log('Recived blockchain is valid, Replacing current blockchain ');
-            this.chain = newBlock;
-            this.broadcastLatest();
-        } else {
-            console.log('Received blockchain invalid ');
-        }
+    // Generate next block
+    generateNextBlock(blockData) {
+        let prevBlock = this.getLatesBlock();
+        let nextIndex = prevBlock.index + 1;
+        let nextTimestamp = new Date().getTime() / 1000;
+        let nextHash = this.calculateHash();
+        let block = new Block(nextIndex, nextHash, prevBlock.hash, nextTimestamp, blockData);
+        this.addBlock(block);
+        return block;
     }
 }
 
-module.exports = Blockchain;
+module.exports = BlockChain;
