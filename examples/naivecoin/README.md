@@ -1,3 +1,9 @@
+## Naviecoin
+* Run naviecoin
+```
+$ npm install
+$ node main.js
+```
 ## Ref
 * Doc
  + http://lhartikk.github.io/
