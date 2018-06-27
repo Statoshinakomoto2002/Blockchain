@@ -65,6 +65,7 @@ class BlockChain {
 
     getBalanceOfAddress(address) {
         let balance = 0;
+        console.log(this.chain);
         for (const block of this.chain) {
             for (const trans of block.transactions) {
                 if (trans.fromAddress === address) {

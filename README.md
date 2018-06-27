@@ -8,3 +8,5 @@
 * http://traanf.com/?p=781
 * http://traanf.com/?p=913
 * http://traanf.com/?p=938&
+
+* https://techmaster.vn/posts/34536/blockchain-lam-viec-nhu-the-nao-phan-1
