@@ -29,7 +29,7 @@ class BlockChain {
     }
 
     minePendingTransactions(miningRewarAddress) {
-        let block = new Block(Date.now(), this.pendingTransactions);
+        let block = new Block(Date.now(), this.pendingTransactions, this.getLatesBlock().hash);
         block.mineBlock(this.difficulty);
 
         this.chain.push(block);

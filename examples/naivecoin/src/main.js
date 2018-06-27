@@ -47,6 +47,14 @@ var initHttpServer = function (httpPort) {
         res.send(result);
     });
 
+    // check chain
+    app.get('/isValidChain', (req, res) => {
+        let isValidChain = blockchain.isChainValid();
+        res.send({
+            code: isValidChain === true ? 200 : 201
+        });
+    });
+
     app.listen(httpPort, function () {
         console.log('Listening http on port : http://localhost:' + httpPort);
     });
