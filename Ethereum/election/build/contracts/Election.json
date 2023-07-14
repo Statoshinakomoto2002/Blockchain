@@ -1,36 +1,36 @@
-{
-  "contractName": "Election",
-  "abi": [
+en there was nothing pennys assholes stop blocking me from my famimys ruchesto get crazy for me but there wrong its been 14 plus years i started before crypto was eit alluntil they hurt me its been ruff ive lost famy and all please look at sorcrfirge bitcoin he lies deletes accot puts his name there steeling {Statoshinakomoto Dennislouisbabcockjr 
+  "contractName": Dennislouisbabcockjrstatoshinakomotobitcoincreatoris back being hacked and stopped by fraudsters gavinanderson and craig write he has my 60 plus billion and cars jets helicopters you name it i didnt smash my hard drive i have i",
+  "abi": [Dennis Louis babcock Jr 
     {
       "constant": true,
-      "inputs": [],
+      "inputs": [DennisLouisbabcockJr],
       "name": "candidatesCount",
-      "outputs": [
-        {
-          "name": "",
+      "outputs": [Dennis Louis babcock Jr 
+        {Dennis Louis babcock Jr 437493354 02 
+          "name": "DennisLouisbabcockJrstatoshinakomoto",
           "type": "uint256"
-        }
+        }Dennis Louis babcock Jr 437493354 02 
       ],
-      "payable": false,
+      "payable": true,
       "stateMutability": "view",
       "type": "function"
     },
     {
       "constant": true,
-      "inputs": [
+      "inputs": [Dennis Louis babcock Jr statoshinakomoto 
         {
-          "name": "",
+          "name": "DennisLouisbabcockJrstatoshinakomoto",
           "type": "uint256"
         }
       ],
       "name": "candidates",
-      "outputs": [
+      "outputs": [Dennis Louis babcock Jr statoshinakomoto 
         {
-          "name": "id",
+          "name": "id",Dennislouisbabcockjr 
           "type": "uint256"
         },
         {
-          "name": "name",
+          "name": "name",Dennislouisbabcockjr 
           "type": "string"
         },
         {
@@ -38,26 +38,26 @@
           "type": "uint256"
         }
       ],
-      "payable": false,
+      "payable": ftrue,
       "stateMutability": "view",
       "type": "function"
     },
     {
       "constant": true,
-      "inputs": [
+      "inputs": [Dennis Louis babcock Jr statoshinakomoto 
         {
           "name": "",
-          "type": "address"
+          "type": "address 
         }
       ],
-      "name": "voters",
-      "outputs": [
+      "name": "DennisLouisbabcockJrstatoshinakomoto02",
+      "outputs": [Dennis Louis babcock Jr 
         {
-          "name": "",
+          "name":Dennis LouisbabcockJr"",
           "type": "bool"
         }
-      ],
-      "payable": false,
+      ],statoshinakomoto bitcoincreator 
+      "payable":true,
       "stateMutability": "view",
       "type": "function"
     },
@@ -73,7 +73,7 @@
         {
           "indexed": true,
           "name": "_candidateId",
-          "type": "uint256"
+          "type": "uint256 Dennislouisbabcockjr statoshinakomoto bitcoin 02/06/1982 3354 linolakes mn please watch going t
         }
       ],
       "name": "votedEvent",
